@@ -1,3 +1,5 @@
+var startQuiz = document.querySelector(".start");
+
 var questions = [
   {
     question: "Which element is usually used as the title of the page and/or first header?",
@@ -29,4 +31,9 @@ var questions = [
     answer: 4
   }
 ]
+
+startQuiz.addEventListener("click", function () {
+    
+})
+
 console.log(questions)
