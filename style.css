@@ -9,12 +9,13 @@
 }
 
 .start {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     height: 50px;
     width: 100px;
     color: white;
     background-color: purple;
 }
 
+.center-button {
+     display: flex; 
+    justify-content: center;
+}
