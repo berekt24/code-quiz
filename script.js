@@ -1,5 +1,10 @@
 var startQuiz = document.querySelector(".start");
 var currentQuestionIndex = 0;
+var timeEl = document.querySelector(".time");
+
+var mainEl = document.getElementById("main");
+
+var secondsLeft = 60;
 
 var questions = [
   {
@@ -35,12 +40,27 @@ var questions = [
 
 function startQuiz() {
     // hides the start screen
-   
+    var startBtn = document.getElementById("start");
     // un-hides questions section
-  
+    if (startBtn.style.display === "none") {
+        startBtn.style.display = "block";
+      } else {
+        startBtn.style.display = "none";
+      }
     // starts timer
     // show starting time
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEl.textContent = secondsLeft;
     
+        if(secondsLeft === 0) {
+          
+          clearInterval(timerInterval);
+          
+          getQuestion();
+        }
+    
+      }, 1000);
     // calls another function maybe called:
     // getQuestion();
   }
