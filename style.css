@@ -48,3 +48,13 @@ button:hover {
     height: 50px;
     width: 100px;
 }
+
+.time {
+    height: 200px;
+    font-size: 50px;
+
+  }
+
+.timer-text {
+    margin: 0%;
+}
