@@ -1,11 +1,8 @@
-var startQuiz = document.querySelector(".start");
+var startQuizEl = document.querySelector("#start");
 var currentQuestionIndex = 0;
 var timeEl = document.querySelector(".time");
-
-var mainEl = document.getElementById("main");
-
-var secondsLeft = 60;
-
+var timerElement = document.querySelector(".timer-count");
+var timerCount;
 var questions = [
   {
     question: "Which element is usually used as the title of the page and/or first header?",
@@ -49,28 +46,37 @@ function startQuiz() {
       }
     // starts timer
     // show starting time
-    var timerInterval = setInterval(function() {
-        secondsLeft--;
-        timeEl.textContent = secondsLeft;
-    
-        if(secondsLeft === 0) {
+        timerCount = 60;
+        
+        startQuizEl.disabled = true;
+        startTimer()
+      }
+
+      function startTimer() {
+        // Sets timer
+        timer = setInterval(function() {
+          timerCount--;
+          timerElement.textContent = timerCount;
           
-          clearInterval(timerInterval);
           
-          getQuestion();
-        }
-    
-      }, 1000);
-    // calls another function maybe called:
-    // getQuestion();
-  }
+          }
+        , 1000);
+      }
+        
+
+
+
+
+
+
+  
 
   function getQuestion() {
     // get current question object from array
     var currentQuestion = questions[currentQuestionIndex];
   
     // update title in the html with current question
-  
+    
   
     // clear out any old question choices
    
@@ -84,9 +90,8 @@ function startQuiz() {
       
     }
   
-
-startQuiz.addEventListener("click", function () {
-
-})
+    startQuizEl.addEventListener("click", startQuiz);
 
 console.log(questions)
+console.log(startQuiz);
+
