@@ -10,11 +10,11 @@ body {
     font-size: 35px;
 }
 
-.start {
+#start {
     height: 50px;
     width: 100px;
     color: white;
-    background-color: purple;
+    
 }
 
 .center-button {
@@ -32,4 +32,19 @@ body {
 
 .end-screen {
     font-size: 25px;
+}
+
+a {
+    text-decoration: none;
+}
+
+button:hover {
+    background-color: lightpink;
+    color: #fff;
+  }
+
+#high-scores {
+    margin: 2%;
+    height: 50px;
+    width: 100px;
 }
