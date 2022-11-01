@@ -1,11 +1,13 @@
+body {
+    text-align: center;
+
+}
 .header {
     font-size: 75px;
-    text-align: center;
 }
 
 .header-p {
     font-size: 35px;
-    text-align: center;
 }
 
 .start {
@@ -18,4 +20,16 @@
 .center-button {
      display: flex; 
     justify-content: center;
+}
+
+.hide {
+    display: none;
+}
+
+.questions {
+    font-size: 25px;
+}
+
+.end-screen {
+    font-size: 25px;
 }
