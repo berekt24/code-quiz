@@ -8,8 +8,9 @@
     <link rel="stylesheet" href ="./style.css"/>
 </head>
 <body>
-    <header class="header">Code Quiz Challenge</header>
-    <!-- <section class="hide"> -->
+    
+    <section>
+        <p class="header-p, start"><strong>Code Quiz Challenge</strong></p>
         <p class="header-p">Try to answer all the questions before time runs out! Wrong answers will decrease your score and subtract the time limit by 10 seconds!</p>
         <div class="center-button" >
             <button id="start"><a href="#start">Start Quiz</a></button>
@@ -21,7 +22,12 @@
 
 </br>
     <section class="questions , hide">
-        <p>Questions</p>
+        <p id="questionTitle">
+            <button>optionA</button>
+            <button>optionB</button>
+            <button>optionC</button>
+            <button>optionD</button>
+        </p>
     </section>
     <section class="end-screen , hide">
         <p>End screen</p>
