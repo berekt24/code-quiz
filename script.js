@@ -112,12 +112,12 @@ function startQuiz() {
     }
 
     function endGame() {
-        var end = document.querySelector("#endScreen");
+        var ending = document.getElementById("endScreen");
         // end.setAttribute("style","display: block");
-          if (end.setAttribute("style","display: none")) {;
-            end.setAttribute("style","display: block");
+          if (ending.style.display === none) {;
+            ending.setAttribute("style","display: block");
           } else (
-            timer.setAttribute("style","display: none"));
+            ending.setAttribute("style","display: none"));
 
             finalScore.textContent = correctAns;
         
@@ -127,5 +127,6 @@ function startQuiz() {
     startQuizEl.addEventListener("click", startQuiz);
 
 console.log(questions)
-console.log(end);
+console.log(ending)
+
 
