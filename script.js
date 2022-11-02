@@ -113,6 +113,7 @@ function startQuiz() {
 
     function endGame() {
         var ending = document.getElementById("endScreen");
+        console.log(ending)
         // end.setAttribute("style","display: block");
           if (ending.style.display === none) {;
             ending.setAttribute("style","display: block");
@@ -121,12 +122,12 @@ function startQuiz() {
 
             finalScore.textContent = correctAns;
         
-
+            
     }
   
     startQuizEl.addEventListener("click", startQuiz);
 
 console.log(questions)
-console.log(ending)
+
 
 
