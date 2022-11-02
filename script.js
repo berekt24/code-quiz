@@ -3,7 +3,11 @@ var currentQuestionIndex = 0;
 var timeEl = document.querySelector(".time");
 var timerElement = document.querySelector(".timer-count");
 var timerCount = 60;
-var questionTitle = document.querySelector("questionTitle")
+var questionTitle = document.querySelector("#questionTitle");
+var optionA = document.querySelector("#option-A")
+var optionB = document.querySelector("#option-B")
+var optionC = document.querySelector("#option-C")
+var optionD = document.querySelector("#option-D")
 var questions = [
   {
     question: "Which element is usually used as the title of the page and/or first header?",
@@ -38,13 +42,15 @@ var questions = [
 
 function startQuiz() {
     // hides the start screen
-    var startBtn = document.getElementById("start");
+    var startBtn = document.getElementById("start-screen");
     // un-hides questions section
     if (startBtn.style.display === "none") {
         startBtn.style.display = "block";
       } else {
         startBtn.style.display = "none";
       }
+      getQuestion();
+      document.querySelector(".questions").classList.remove("hide")
     // starts timer
     // show starting time
         timerCount = 60;
@@ -58,17 +64,22 @@ function startQuiz() {
         timer = setInterval(function() {
           timerCount--;
           timeEl.textContent = timerCount;
-          
+        if (timerCount <= 0) {
+            clearInterval(timer);
+        }
+        
           
           }
         , 1000);
       }
+
+      
         
 
   function getQuestion() {
     // get current question object from array
     var currentQuestion = questions[currentQuestionIndex];
-  
+    console.log(currentQuestion)
     // update title in the html with current question
     questionTitle.textContent = questions[currentQuestionIndex].question;
     optionA.textContent = questions[currentQuestionIndex].options[0];
@@ -81,8 +92,18 @@ function startQuiz() {
       
     }
 
-    function checkAnswers() {
+    function checkAnswers(event) {
+        console.log(event.target.textContent)
+        if (event.target.textContent === questions[currentQuestionIndex].answer) {
+            document.querySelector("#answer").textContent = "Correct!"
 
+        }
+        else {document.querySelector("#answer").textContent = "Wrong!"}
+        currentQuestionIndex++
+        if (currentQuestionIndex === questions.length) {
+            endGame();
+        }
+        else {getQuestion();}
     }
   
     startQuizEl.addEventListener("click", startQuiz);
