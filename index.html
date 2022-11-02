@@ -1,39 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
-    <link rel="stylesheet" href ="./style.css"/>
+    <link rel="stylesheet" href="./style.css" />
 </head>
-<body>
-    
-    <section>
-        <p class="header-p, start"><strong>Code Quiz Challenge</strong></p>
-        <p class="header-p">Try to answer all the questions before time runs out! Wrong answers will decrease your score and subtract the time limit by 10 seconds!</p>
-        <div class="center-button" >
-            <button id="start"><a href="#start">Start Quiz</a></button>
-         </div>
-         <div>
-            <button id="high-scores"><a href="#high-scores"> High scores</a></button>
-         </div>
-</section>
 
-</br>
-    <section class="questions , hide">
-        <p id="questionTitle">
-            <button>optionA</button>
-            <button>optionB</button>
-            <button>optionC</button>
-            <button>optionD</button>
-        </p>
+<body>
+
+    <section id="start-screen">
+        <p class="header-p start"><strong>Code Quiz Challenge</strong></p>
+        <p class="header-p">Try to answer all the questions before time runs out! Wrong answers will decrease your score
+            and subtract the time limit by 10 seconds!</p>
+        <div class="center-button">
+            <button id="start"><a href="#start">Start Quiz</a></button>
+        </div>
+        <!-- <div>
+            <button id="high-scores"><a href="#high-scores"> High scores</a></button>
+        </div> -->
     </section>
-    <section class="end-screen , hide">
+
+    </br>
+    <section class="questions hide">
+        <p id="questionTitle"></p>
+            <button id="option-A" onclick="checkAnswers(event)">optionA</button>
+            <button id="option-B" onclick="checkAnswers(event)">optionB</button>
+            <button id="option-C" onclick="checkAnswers(event)">optionC</button>
+            <button id="option-D" onclick="checkAnswers(event)">optionD</button>
+       
+    </section>
+    <div id="answer"> </div>
+    <section class="end-screen  hide">
         <p>End screen</p>
     </section>
-    <div class = "timer-text"></div>
+    <div>
+        <button id="high-scores"><a href="#high-scores"> High scores</a></button>
+    </div>
+    <div class="timer-text"></div>
     <div class="time"> 60 </div>
     <script src="script.js"></script>
 </body>
+
 </html>
