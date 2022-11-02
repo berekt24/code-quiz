@@ -8,6 +8,8 @@ var optionA = document.querySelector("#option-A")
 var optionB = document.querySelector("#option-B")
 var optionC = document.querySelector("#option-C")
 var optionD = document.querySelector("#option-D")
+var finalScore = document.querySelector("#final-score")
+var correctAns = 0;
 var questions = [
   {
     question: "Which element is usually used as the title of the page and/or first header?",
@@ -95,15 +97,29 @@ function startQuiz() {
     function checkAnswers(event) {
         console.log(event.target.textContent)
         if (event.target.textContent === questions[currentQuestionIndex].answer) {
+            correctAns++;
             document.querySelector("#answer").textContent = "Correct!"
 
         }
-        else {document.querySelector("#answer").textContent = "Wrong!"}
+        else {document.querySelector("#answer").textContent = "Wrong!"
+                timerCount -= 10;
+                }
         currentQuestionIndex++
-        if (currentQuestionIndex === questions.length) {
-            endGame();
+        if (currentQuestionIndex < questions.length) {
+           getQuestion();
         }
-        else {getQuestion();}
+        else {endGame();}
+    }
+
+    function endGame() {
+        var end = document.querySelector("#endScreen");
+
+        if (end.style.display === "none") {
+            end.style.display = "block";
+            timer.style.display = "none";
+
+            finalScore.textContent = correctAns;
+        }
     }
   
     startQuizEl.addEventListener("click", startQuiz);
