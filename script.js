@@ -1,3 +1,4 @@
+// variable list
 var startQuizEl = document.querySelector("#start");
 var currentQuestionIndex = 0;
 var timeEl = document.querySelector(".time");
@@ -47,7 +48,7 @@ var questions = [
         answer: "d. It gets the id from the HTML."
     }
 ]
-
+// start quiz and timer functions
 function startQuiz() {
     // hides the start screen
     var startBtn = document.getElementById("start-screen");
@@ -117,7 +118,7 @@ function checkAnswers(event) {
     }
     else { endGame(); }
 }
-
+// end of quiz and storage functions
 function endGame() {
     var ending = document.getElementById("endScreen");
     console.log(ending)
