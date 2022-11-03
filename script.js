@@ -130,6 +130,7 @@ function startQuiz() {
             questionsClass.style.display = "none";
             timeEl.style.display = "none";
             finalScore.textContent = "final score: " + correctAns;
+            
         
             
     }
