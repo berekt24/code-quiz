@@ -12,6 +12,9 @@ var finalScore = document.querySelector("#final-score")
 var correctAns = 0;
 var highscores =[];
 var highScorelist = document.querySelector("#highScoresList")
+var questionsClass = document.querySelector(".questions");
+var initialbox = document.querySelector("#initial");
+var submit = document.querySelector("#submit-initial");
 var questions = [
   {
     question: "Which element is usually used as the title of the page and/or first header?",
@@ -70,6 +73,10 @@ function startQuiz() {
           timeEl.textContent = timerCount;
         if (timerCount <= 0) {
             clearInterval(timer);
+        if (currentQuestionIndex < questions.length) {
+            clearInterval(timer);
+            endGame();
+        }
         }
         
           
@@ -115,17 +122,43 @@ function startQuiz() {
         var ending = document.getElementById("endScreen");
         console.log(ending)
         // end.setAttribute("style","display: block");
-          if (ending.style.display === none) {;
-            ending.setAttribute("style","display: block");
+          if (ending.style.display === "block") {;
+            ending.setAttribute("style","display: none");
           } else (
-            ending.setAttribute("style","display: none"));
+            ending.setAttribute("style","display: block"));
 
-            finalScore.textContent = correctAns;
+            questionsClass.style.display = "none";
+            timeEl.style.display = "none";
+            finalScore.textContent = "final score: " + correctAns;
         
             
     }
-  
+    
+    function highScores(event) {
+        event.preventDefault();
+    }
+
+
+    var storedHighScores =localStorage.getItem("high scores");
+    var scoresArray;
+
+    if (storedHighScores === null) {
+        scoresArray = [];
+    } else {
+        scoresArray = JSON.parse(storedHighScores)
+    }
+
+    var yourScore = {
+        initials: initialbox.value,
+        score: finalScore.textContent
+    };
+    
+    console.log(yourScore)
+
     startQuizEl.addEventListener("click", startQuiz);
+    submit.addEventListener("click", function(event){ 
+        highScores(event);
+    });
 
 console.log(questions)
 
