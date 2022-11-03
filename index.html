@@ -18,32 +18,31 @@
         <div class="center-button">
             <button id="start"><a href="#start">Start Quiz</a></button>
         </div>
-        <!-- <div>
-            <button id="high-scores"><a href="#high-scores"> High scores</a></button>
-        </div> -->
+
     </section>
 
     </br>
     <section class="questions hide">
         <p id="questionTitle"></p>
-            <button id="option-A" onclick="checkAnswers(event)">optionA</button>
-            <button id="option-B" onclick="checkAnswers(event)">optionB</button>
-            <button id="option-C" onclick="checkAnswers(event)">optionC</button>
-            <button id="option-D" onclick="checkAnswers(event)">optionD</button>
-       
+        <button id="option-A" onclick="checkAnswers(event)">optionA</button>
+        <button id="option-B" onclick="checkAnswers(event)">optionB</button>
+        <button id="option-C" onclick="checkAnswers(event)">optionC</button>
+        <button id="option-D" onclick="checkAnswers(event)">optionD</button>
+
     </section>
     <div id="answer"> </div>
-    <section id="endScreen">
-        <!-- <div id="end">End!</div> -->
-    <div id="final-score"> </div>
-        <input id="initial"/>
+    <section id="endScreen" class="hide">
+
+        <div id="final-score"> </div>
+        <input id="initial" />
         <button type="submit" id="submit-initial">Submit</button>
-    </section>
-    <ul id="highScoreList"></ul>
-    <section>
-    <div id="hide">
-        <button id="high-scores"><a href="#high-scores"> High scores</a></button>
-    </div>
+        <div id="high-score-spot"> </div>
+        <ul id="highScoreList"></ul>
+
+        <div>
+            <button id="high-scores"><a href="#high-scores"> High scores</a></button>
+        </div>
+
     </section>
     <div class="timer-text"></div>
     <div class="time"> 60 </div>
